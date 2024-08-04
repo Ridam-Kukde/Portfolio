@@ -8,6 +8,7 @@ import { NavBar } from './components/Layout1/NavBar';
 import Map from './components/Layout1/Map';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Footer from './components/Layout1/Footer';
+import ProjectSlider from './components/Layout1/ProjectSlider';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -44,6 +45,7 @@ const App = () => {
         <Contact />
         <Map />
         <Footer />
+        <ProjectSlider/>
       </Container>
     </ThemeProvider>
   );

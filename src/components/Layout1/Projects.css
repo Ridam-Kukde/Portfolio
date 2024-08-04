@@ -6,13 +6,13 @@
   }
   
   .project-card {
-    border-radius: 8px;
+    border-radius: 90px;
     overflow: hidden;
   }
   
   .project-image {
     width: 100%;
-    height: auto;
+    height: 300px;
     border-radius: 8px;
   }
   
@@ -21,14 +21,14 @@
     z-index: 1;
     width: 40px;
     height: 40px;
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
     border-radius: 50%;
   }
   
   .slick-prev:before,
   .slick-next:before {
     font-size: 20px;
-    color: white;
+    color: rgba(20, 4, 4, 0.568);
   }
   
   .slick-dots li button:before {
