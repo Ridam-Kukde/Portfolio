@@ -7,6 +7,9 @@ import { Contact } from './components/Layout1/Contact';
 import { NavBar } from './components/Layout1/NavBar';
 import Map from './components/Layout1/Map';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Footer from './components/Layout1/Footer';
+import Certification from './components/Layout1/Certification';
+import Profile from './components/Layout1/Profile';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -35,11 +38,14 @@ const App = () => {
       <CssBaseline />
       <NavBar darkMode={darkMode} handleThemeChange={handleThemeChange} />
       <Container maxWidth="lg">
+        <Profile/>
         <About />
         <Skills />
         <Projects />
+        <Certification/>
         <Contact />
         <Map />
+        <Footer />
       </Container>
     </ThemeProvider>
   );
