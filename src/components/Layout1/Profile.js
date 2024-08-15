@@ -7,7 +7,7 @@ const Profile = () => {
 
   return (
     <animated.section style={fade} className="py-10">
-      <Paper elevation={3} style={{ padding: '20px', borderRadius: '15px', textAlign: 'center', backgroundColor: '#f5f5f5' }}>
+      <Paper elevation={3} sx={{ padding: '20px', borderRadius: '15px', textAlign: 'center'}}>
         <Box mb={3}>
           <img
             src="https://via.placeholder.com/150" // Replace with your image URL
