@@ -1,29 +1,40 @@
 import React from 'react';
-import { useSpring, animated } from '@react-spring/web';
-import { Typography, Box, Paper } from '@mui/material';
+import { Typography, Box, Container, Chip, styled } from '@mui/material';
+import { motion } from 'framer-motion';
+
+const StyledChip = styled(Chip)(({ theme }) => ({
+  margin: theme.spacing(0.5),
+}));
 
 export const About = () => {
-  const fade = useSpring({ opacity: 1, from: { opacity: 0 }, config: { duration: 1000 } });
+  const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'TypeScript', 'Material-UI', 'Styled Components', 'Jest', 'Git'];
 
   return (
-    <animated.section id="summary" style={fade} className="py-10 bg-gradient-to-r from-blue-400 to-purple-500">
-      <Paper elevation={3} style={{ padding: '30px', borderRadius: '15px' }}>
-        <Box textAlign="center" mt={5} mb={10}>
-          <Typography variant="h4" gutterBottom >Summary</Typography>
-          <Typography variant="body1" paragraph >
-            I am a senior frontend developer with 2+ years of experience specializing in building scalable and maintainable web applications. I have a strong background in modern web technologies and a proven track record of delivering high-quality projects that meet business requirements and exceed user expectations.
+    <Box component="section" id="about" sx={{ py: 8, bgcolor: 'background.default' }}>
+      <Container maxWidth="md">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Typography variant="h4" align="center" gutterBottom>About Me</Typography>
+          <Typography variant="body1" paragraph align="center">
+            I'm a senior frontend developer with 2+ years of experience in building scalable and maintainable web applications. I specialize in modern web technologies and have a passion for creating exceptional user experiences.
           </Typography>
-          <Typography variant="body1" >
+          <Typography variant="h6" align="center" gutterBottom>Skills</Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', mb: 4 }}>
+            {skills.map((skill) => (
+              <StyledChip key={skill} label={skill} variant="outlined" />
+            ))}
+          </Box>
+          <Typography variant="body1" align="center">
             Education: Master's Degree in Computer Science
           </Typography>
-          <Typography variant="body1"  mt={2}>
-            Skills: HTML, CSS, JavaScript, React, Redux, TypeScript, Material-UI, Styled Components, Jest, Enzyme, Git, Agile Methodologies
+          <Typography variant="body1" align="center" sx={{ mt: 2 }}>
+            Interests: UI/UX Design, Performance Optimization, Open Source Contribution
           </Typography>
-          <Typography variant="body1"  mt={2}>
-            Interests: Web Development, UI/UX Design, Performance Optimization, Scalable Architecture, Open Source Contribution, Mentoring Junior Developers
-          </Typography>
-        </Box>
-      </Paper>
-    </animated.section>
+        </motion.div>
+      </Container>
+    </Box>
   );
 };

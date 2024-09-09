@@ -44,7 +44,7 @@ const App = () => {
         <Projects />
         <Certification/>
         <Contact />
-        <Map />
+        {/* <Map /> */}
         <Footer />
       </Container>
     </ThemeProvider>
