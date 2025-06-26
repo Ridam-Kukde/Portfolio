@@ -55,7 +55,7 @@ const Profile = () => {
             </IconButton>
           </Box>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 1, mb: 4 }}>
-            {resumeData.skills?.map((skill, index) => (
+            {resumeData?.skills?.map((skill, index) => (
               <Chip key={index} label={skill} variant="outlined" />
             ))}
           </Box>
